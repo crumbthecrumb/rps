@@ -8,8 +8,8 @@ function restart () {
     basic.clearScreen()
 }
 input.onButtonPressed(Button.A, function () {
-    music.playTone(262, music.beat(BeatFraction.Quarter))
     if (go == 0) {
+        music.playTone(262, music.beat(BeatFraction.Quarter))
         svar = 1
         radio.sendNumber(1)
         basic.showLeds(`
@@ -19,14 +19,11 @@ input.onButtonPressed(Button.A, function () {
             # # # # #
             . # # # .
             `)
-    } else {
-        restart()
-        radio.sendString("")
     }
 })
 input.onButtonPressed(Button.AB, function () {
-    music.playTone(262, music.beat(BeatFraction.Quarter))
     if (go == 0) {
+        music.playTone(262, music.beat(BeatFraction.Quarter))
         svar = 3
         radio.sendNumber(3)
         basic.showLeds(`
@@ -36,23 +33,14 @@ input.onButtonPressed(Button.AB, function () {
             # . . . #
             . # # # .
             `)
-    } else {
-        restart()
-        radio.sendString("")
     }
 })
-radio.onReceivedString(function (receivedString) {
-    restart()
-})
 input.onButtonPressed(Button.B, function () {
-    music.playTone(262, music.beat(BeatFraction.Quarter))
     if (go == 0) {
+        music.playTone(262, music.beat(BeatFraction.Quarter))
         svar = 2
         radio.sendNumber(2)
         basic.showIcon(IconNames.Scissors)
-    } else {
-        restart()
-        radio.sendString("")
     }
 })
 let svar = 0
